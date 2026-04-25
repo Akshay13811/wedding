@@ -1,5 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useState } from 'react'
 import { PageShell } from '../../ui/layouts/PageShell/PageShell'
 import { useGuestData } from '../../data/GuestDataProvider'
 import type { Guest } from '../../data/guests'
