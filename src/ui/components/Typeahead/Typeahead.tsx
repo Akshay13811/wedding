@@ -148,7 +148,6 @@ export function GuestTypeahead({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -6 }}
             transition={{ duration: 0.16, ease: 'easeOut' }}
-            layout
           >
             {results.length ? (
               results.map((r, idx) => {

@@ -9,6 +9,7 @@
   font-family: var(--font-serif);
   font-size: 14px;
   color: var(--color-ink-muted);
+  font-weight: 600;
 }
 
 .input {
