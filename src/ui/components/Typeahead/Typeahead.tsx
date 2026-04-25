@@ -1,38 +1,11 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import Fuse, { type FuseResultMatch } from 'fuse.js'
+import Fuse from 'fuse.js'
 import styles from './typeahead.module.css'
 import type { Guest } from '../../../data/guests'
 
-type MatchRange = { start: number; end: number }
-
 function normalizeQuery(q: string) {
   return q.trim().replace(/\s+/g, ' ')
-}
-
-function rangesFromFuse(matches: readonly FuseResultMatch[] | undefined) {
-  const nameMatch = matches?.find((m) => m.key === 'fullName')
-  const indices: ReadonlyArray<readonly [number, number]> = nameMatch?.indices ?? []
-  const ranges: MatchRange[] = indices.map(([start, end]) => ({ start, end }))
-  ranges.sort((a, b) => a.start - b.start)
-  return ranges
-}
-
-function highlight(text: string, ranges: MatchRange[]) {
-  if (!ranges.length) return <>{text}</>
-  const out: ReactNode[] = []
-  let i = 0
-  for (const r of ranges) {
-    if (r.start > i) out.push(text.slice(i, r.start))
-    out.push(
-      <mark key={`${r.start}-${r.end}`} className={styles.mark}>
-        {text.slice(r.start, r.end + 1)}
-      </mark>,
-    )
-    i = r.end + 1
-  }
-  if (i < text.length) out.push(text.slice(i))
-  return <>{out}</>
 }
 
 export function GuestTypeahead({
@@ -151,7 +124,6 @@ export function GuestTypeahead({
             {results.length ? (
               results.map((r, idx) => {
                 const isActive = idx === activeIndex
-                const ranges = rangesFromFuse(r.matches)
                 return (
                   <button
                     key={r.item.id}
