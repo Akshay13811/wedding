@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react'
 import styles from './pageShell.module.css'
-import { PetalDrift } from '../../effects/PetalDrift/PetalDrift'
 import { CornerOrnaments } from '../../effects/CornerOrnaments/CornerOrnaments'
 
 export function PageShell({
@@ -16,7 +15,6 @@ export function PageShell({
       <CornerOrnaments />
       <div className={styles.container}>
         <main className={styles.card}>
-          <PetalDrift />
           {children}
         </main>
         {footer ? <footer className={styles.footer}>{footer}</footer> : null}
