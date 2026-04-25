@@ -51,10 +51,9 @@ export function GuestTypeahead({
     return new Fuse(guests, {
       keys: ['fullName'],
       includeMatches: true,
-      threshold: 0.36,
-      distance: 60,
+      threshold: 0.25,
+      minMatchCharLength: 1,
       ignoreLocation: true,
-      minMatchCharLength: 2,
       shouldSort: true,
     })
   }, [guests])
@@ -168,7 +167,7 @@ export function GuestTypeahead({
                     }}
                   >
                     <div className={styles.name}>
-                      {highlight(r.item.fullName, ranges)}
+                      {r.item.fullName}
                     </div>
                     <div className={styles.hint}>Tap to view your table</div>
                   </button>
