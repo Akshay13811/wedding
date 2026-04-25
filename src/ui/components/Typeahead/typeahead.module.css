@@ -1,0 +1,82 @@
+.wrap {
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+  padding-inline: var(--space-6);
+}
+
+.label {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  color: var(--color-ink-muted);
+}
+
+.input {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: var(--radius-control);
+  border: 1px solid rgba(184, 154, 74, 0.45);
+  background: rgba(251, 251, 253, 0.85);
+  color: var(--color-ink);
+  font-size: 16px;
+}
+
+.input::placeholder {
+  color: rgba(27, 42, 73, 0.45);
+}
+
+.input:focus {
+  border-color: rgba(184, 154, 74, 0.75);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-radius: 16px;
+  background: rgba(251, 251, 253, 0.98);
+  border: 1px solid rgba(184, 154, 74, 0.38);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  transform-origin: top;
+}
+
+.item {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  background: transparent;
+  border: none;
+  display: grid;
+  gap: 2px;
+  cursor: pointer;
+}
+
+.itemActive {
+  background: rgba(215, 192, 121, 0.16);
+}
+
+.name {
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.hint {
+  font-size: 12px;
+  color: rgba(27, 42, 73, 0.62);
+}
+
+.mark {
+  background: rgba(215, 192, 121, 0.45);
+  padding: 0 2px;
+  border-radius: 4px;
+}
+
+.empty {
+  padding: 14px;
+  color: rgba(27, 42, 73, 0.7);
+  font-size: 14px;
+}
+

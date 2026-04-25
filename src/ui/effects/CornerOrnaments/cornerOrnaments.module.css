@@ -1,0 +1,47 @@
+.wrap {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.img {
+  position: absolute;
+  width: clamp(200px, 48vw, 240px);
+  height: auto;
+  opacity: 0.95;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, 0.18));
+}
+
+.topLeft {
+  top: 0px;
+  left: 0px;
+}
+
+.topRight {
+  top: 0px;
+  right: 0px;
+}
+
+.bottomLeft {
+  bottom: 0px;
+  left: 0px;
+}
+
+.bottomRight {
+  bottom: 0px;
+  right: 0px;
+}
+
+@media (max-width: 420px) {
+  .img {
+    width: clamp(120px, 38vw, 210px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .img {
+    filter: none;
+  }
+}
+
