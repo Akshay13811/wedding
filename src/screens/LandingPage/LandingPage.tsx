@@ -53,13 +53,14 @@ export function LandingPage() {
                 transition={{ duration: 0.22, ease: 'easeOut' }}
               >
                 <div className={styles.header}>
-                  <div className={styles.kicker}>Reception Seating</div>
                   <h1 className={styles.title}>
                     Ganan <span aria-hidden="true">&amp;</span> Arabi
                   </h1>
+                  <div className={styles.kicker}>29 May 2026</div>
+                  <div className={styles.cover}><img src="cover.JPG" width="90%" /></div>
                   <p className={styles.subtitle}>
-                    Thank you for celebrating with us. Please search for your
-                    name below to find your table.
+                    <span>Let the party begin!</span>
+                    <span>Please search for your name below to find your table.</span>
                   </p>
                 </div>
 
@@ -69,7 +70,7 @@ export function LandingPage() {
                   </div>
                 ) : guestData.status === 'error' ? (
                   <div className={styles.searchPlaceholder}>
-                    Couldn’t load the guest list.
+                    Couldn't load the guest list.
                     <div className={styles.error}>{guestData.error}</div>
                   </div>
                 ) : (

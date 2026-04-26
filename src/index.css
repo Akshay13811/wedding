@@ -43,3 +43,8 @@ input:focus-visible {
 #root {
   min-height: 100svh;
 }
+
+@font-face {
+  font-family: 'amoresa';
+  src: url('Amoresa Regular.woff2') format('woff2');
+}

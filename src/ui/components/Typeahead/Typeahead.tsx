@@ -71,7 +71,6 @@ export function GuestTypeahead({
 
   return (
     <div className={styles.wrap} ref={wrapRef}>
-      <div className={styles.label}>Search your name</div>
       <input
         className={styles.input}
         value={query}
