@@ -50,7 +50,7 @@ export function LandingPage() {
                       Ganan <span aria-hidden="true">&amp;</span> Arabi
                     </h1>
                     <div className={styles.kicker}>29 May 2026</div>
-                    <div className={styles.cover}><img src="cover.JPG" width="90%" /></div>
+                    <div className={styles.cover}><img src="cover3.jpg" width="90%" /></div>
                     <p className={styles.subtitle}>
                       <span>Let the party begin!</span>
                       <span>Please search for your name below to find your table.</span>
