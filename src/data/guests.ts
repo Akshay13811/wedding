@@ -6,6 +6,7 @@ export type Guest = {
   lastName: string
   fullName: string
   table: string
+  customMessage?: string
 }
 
 type GuestRow = {
@@ -13,6 +14,7 @@ type GuestRow = {
   first_name?: string
   last_name?: string
   table?: string
+  custom_message?: string
 }
 
 function normalize(s: string) {
@@ -43,10 +45,12 @@ export async function loadGuests(): Promise<Guest[]> {
     const rawFirst = row.first_name ?? ''
     const rawLast = row.last_name ?? ''
     const rawTable = row.table ?? ''
+    const rawCustomMessage = row.custom_message ?? ''
     const firstName = normalize(rawFirst)
     const lastName = normalize(rawLast)
     const fullName = normalize(`${firstName} ${lastName}`.trim())
     const table = normalize(rawTable)
+    const customMessage = normalize(rawCustomMessage)
     if (!firstName || !lastName || !table) continue
 
     const id = normalize(row.id ?? '')
@@ -55,7 +59,7 @@ export async function loadGuests(): Promise<Guest[]> {
     if (seen.has(finalId)) continue
     seen.add(finalId)
 
-    guests.push({ id: finalId, firstName, lastName, fullName, table })
+    guests.push({ id: finalId, firstName, lastName, fullName, table, customMessage })
   }
 
   guests.sort((a, b) => a.fullName.localeCompare(b.fullName))

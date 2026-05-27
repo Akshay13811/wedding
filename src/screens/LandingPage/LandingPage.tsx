@@ -93,6 +93,12 @@ export function LandingPage() {
                     <p className={styles.subtitle}>
                       {selectedGuest?.fullName ?? ''}
                     </p>
+                    {
+                        selectedGuest.customMessage &&
+                        <p className={styles.subtitle}>
+                          {selectedGuest.customMessage}
+                        </p>
+                    }
                   </div>
 
                   <div className={styles.actions}>
