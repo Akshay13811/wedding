@@ -94,7 +94,7 @@ export function LandingPage() {
                       {selectedGuest?.fullName ?? ''}
                     </p>
                     {
-                        selectedGuest.customMessage &&
+                        selectedGuest?.customMessage &&
                         <p className={styles.subtitle}>
                           {selectedGuest.customMessage}
                         </p>
